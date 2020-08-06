@@ -9,10 +9,17 @@
     <div class="container projects-container">        
         <div class="row">
             <div class="col-12 wow fadeIn">
+<<<<<<< HEAD
                @if (count(@$side_projects) > 0)
                    <!-- start pricing table style 01 section -->             
                 <div class="row pricing-box-style1">                                       
                     @foreach ($side_projects as $project) 
+=======
+               @if (count($side_projects) > 0)
+                   <!-- start pricing table style 01 section -->             
+                <div class="row pricing-box-style1">                                       
+                    @foreach ($side_projects as $side_project) 
+>>>>>>> origin/Alberto
                     <!-- start pricing item -->
                     <div class="col-12 col-md-4 text-center md-margin-30px-bottom wow fadeInUp">
                         <div class="pricing-box border border-color-extra-light-gray">
@@ -25,7 +32,7 @@
                                 <!-- start pricing price -->
                                 <div class="pricing-price">
                                     <span class="alt-font text-extra-dark-gray font-weight-600 text-uppercase">proyecto:</span>
-                                    <h4 class="text-extra-dark-gray alt-font font-weight-600 mb-0">{{ $project->name }}</h4>
+                                    <h4 class="text-extra-dark-gray alt-font font-weight-600 mb-0">{{ $side_project->name }}</h4>
                                     <!-- <div class="text-extra-small text-uppercase alt-font margin-5px-top">Per Month</div> -->
                                 </div>
                                 <!-- end pricing price -->
@@ -33,8 +40,8 @@
                             <!-- start pricing features -->
                             <div class="padding-45px-all pricing-features md-padding-20px-all sm-padding-30px-all">
                                 <ul class="list-style-11">
-                                    <li>Entrevistas: {{ count($project->enterviews) }}</li>
-                                    <strong><li>{{ str_limit($project->description,50) }}</li></strong>
+                                    <li>Entrevistas: {{ count($side_project->enterviews) }}</li>
+                                    <strong><li>{{ str_limit($side_project->description,50) }}</li></strong>
                                     <!-- <li>Unlimited Styles</li>
                                     <li>Customer Service</li>
                                     <li>Manual Backup</li> -->
@@ -52,13 +59,13 @@
                     @endforeach
                 </div>
         <!-- end pricing table style 01 section -->
-               @elseif(count(@$projects) == 0 && isset($manager))
+               @elseif(count($side_projects) == 0 && isset($manager))
                <div class="text-center">
                 <h2><i class="far fa-frown"></i></h2>
                 <h2>{{ $manager->name }} aun no tiene proyectos asignados</h2>
                 <span>Puedes crear uno nuevo haciendo click en el boton de arriba.</span>
             </div>
-            @elseif(count(@$projects) == 0 && isset($enterprise))
+            @elseif(count($side_projects) == 0 && isset($enterprise))
                <div class="text-center">
                 <h2><i class="far fa-frown"></i></h2>
                 <h2>Aun no se han creado proyectos para {{ $enterprise->name }}</h2>
