@@ -4,15 +4,15 @@
   <!-- start section -->
   <section class="wow fadeIn main-admin-container">
     <header class="main-admin-header position-fixed">
-       <a href={{ route('create-project') }} class="">+ Crear Nuevo Proyecto</a> Proyecto encontrados: {{ count($projects) }}
+       <a href={{ route('create-project') }} class="">+ Crear Nuevo Proyecto</a> Proyecto encontrados: {{ count($side_projects) }}
     </header>
     <div class="container projects-container">        
         <div class="row">
             <div class="col-12 wow fadeIn">
-               @if (count(@$projects) > 0)
+               @if (count(@$side_projects) > 0)
                    <!-- start pricing table style 01 section -->             
                 <div class="row pricing-box-style1">                                       
-                    @foreach ($projects as $project) 
+                    @foreach ($side_projects as $project) 
                     <!-- start pricing item -->
                     <div class="col-12 col-md-4 text-center md-margin-30px-bottom wow fadeInUp">
                         <div class="pricing-box border border-color-extra-light-gray">
