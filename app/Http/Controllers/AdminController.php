@@ -185,7 +185,7 @@ class AdminController extends Controller
         return view('admin/diagnostics/index', compact('diagnostics','project','side_projects','side_enterprises','users'));
     }
 
-    public function createDiagnostics()
+    public function createDiagnostics(Request $request)
     {
         $mytime = date('d-m-Y');
         $project= $request->project_id; 

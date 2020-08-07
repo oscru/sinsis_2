@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Proposal;
 use App\File;
+use App\User;
 
 class DropzoneController extends Controller
 {
@@ -16,7 +17,9 @@ class DropzoneController extends Controller
         $project_id = $request->project_id;
         $projects = Project::getProjects();
         $side_enterprises = Enterprise::getEnterprises();
-        return view('admin/proposal/create', compact('projects', 'side_enterprises','project_id'));
+        $side_projects = Project::getProjects();
+        $users = User::getUsers();
+        return view('admin/proposal/create', compact('projects', 'side_enterprises','project_id', 'side_projects', 'users'));
     }
 
 

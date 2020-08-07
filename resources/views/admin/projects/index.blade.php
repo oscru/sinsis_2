@@ -9,17 +9,10 @@
     <div class="container projects-container">        
         <div class="row">
             <div class="col-12 wow fadeIn">
-<<<<<<< HEAD
-               @if (count(@$side_projects) > 0)
-                   <!-- start pricing table style 01 section -->             
-                <div class="row pricing-box-style1">                                       
-                    @foreach ($side_projects as $project) 
-=======
                @if (count($side_projects) > 0)
                    <!-- start pricing table style 01 section -->             
                 <div class="row pricing-box-style1">                                       
                     @foreach ($side_projects as $side_project) 
->>>>>>> origin/Alberto
                     <!-- start pricing item -->
                     <div class="col-12 col-md-4 text-center md-margin-30px-bottom wow fadeInUp">
                         <div class="pricing-box border border-color-extra-light-gray">
@@ -48,7 +41,7 @@
                                 </ul>
                                 <!-- start pricing action -->
                                 <div class="pricing-action margin-35px-top md-no-margin-top">
-                                    <a href="{{ route('set-project-view',$project->slug) }}" class="btn btn-dark-gray btn-small text-extra-small">Proyecto</a>                                        
+                                    <a href="{{ route('set-project-view',$side_project->slug) }}" class="btn btn-dark-gray btn-small text-extra-small">Proyecto</a>                                        
                                 </div>
                                 <!-- end pricing action -->
                             </div>
