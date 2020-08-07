@@ -41,7 +41,7 @@
                                 </ul>
                                 <!-- start pricing action -->
                                 <div class="pricing-action margin-35px-top md-no-margin-top">
-                                    <a href="{{ route('set-project-view',$side_project->slug) }}" class="btn btn-dark-gray btn-small text-extra-small">Proyecto</a>                                        
+                                    <a href="{{ route('set-project-view',$project->slug) }}" class="btn btn-dark-gray btn-small text-extra-small">Proyecto</a>                                        
                                 </div>
                                 <!-- end pricing action -->
                             </div>
