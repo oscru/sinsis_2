@@ -281,4 +281,10 @@ class AdminController extends Controller
         $users = User::getUsers();        
         return view('admin.projects.index', compact('side_projects', 'projects','enterprises', 'side_enterprises','users', 'manager','enterprise'));
     }
+
+    public function indexClientv()
+    {
+       
+        return view('index');
+    }
 }

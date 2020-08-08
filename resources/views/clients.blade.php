@@ -35,7 +35,7 @@
                                 </ul>
                                 <!-- start pricing action -->
                                 <div class="pricing-action margin-35px-top md-no-margin-top">
-                                    <a href="#" class="btn btn-dark-gray btn-small text-extra-small">Ver detalles</a>                                        
+                                    <a href={{ route('clientsv',$project->id) }} class="btn btn-dark-gray btn-small text-extra-small">Ver detalles</a>                                        
                                 </div>
                                 <!-- end pricing action -->
                             </div>

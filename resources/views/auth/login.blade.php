@@ -11,15 +11,15 @@
 <section class="p-0 bg-extra-light-gray">
     <div class="container-fluid">
         <div class="row">
-            <div class="backg col-12 col-lg-6 full-screen p-0 cover-background d-none d-lg-block" style="background-image:url({{ asset('images/logos/logo-sinsis.png') }})"></div>
-            <div class=" col-12 col-lg-6 full-screen bg-extra-dark-gray p-0">
+            <div class="col-12 col-lg-6 full-screen p-0 cover-background d-none d-lg-block" style="background-image:url({{ asset('images/home/users3.jpg') }})"></div>
+            <div class="backg2 col-12 col-lg-6 full-screen bg-extra-dark-gray p-0">
                 <div class="position-relative full-screen">
                     <div class="slider-typography text-center sm-overflow-auto">
                         <div class="slider-text-middle-main">
                             <div class="slider-text-middle padding-three-all sm-padding-15px-all" >
-                                <div class="margin-nine-bottom md-margin-50px-bottom sm-margin-15px-bottom" ><a href={{ route('home') }} ></a></div>
+                                <div class="margin-nine-bottom md-margin-50px-bottom sm-margin-15px-bottom" ><a href={{ route('home') }} style="background-image:url({{ asset('images/logos/logo-sinsis-mini.png') }})"></a></div>
                                 {{-- <h6 class="font-weight-300 text-white-2 margin-40px-bottom sm-margin-35px-bottom">We’re getting ready to launch</h6> --}}                                
-                                <div class="backg2 bg-extra-dark-gray padding-eight-all border-radius-6 width-70 lg-width-80 sm-width-100 mx-auto sm-padding-30px-all" style="background-image:url({{ asset('images/logos/logo-sinsis-mini.png') }})">
+                                <div class="backg bg-extra-dark-gray padding-eight-all border-radius-6 width-70 lg-width-80 sm-width-100 mx-auto sm-padding-30px-all" >
                                     <h6 class="font-weight-300 text-white-2 margin-20px-bottom sm-margin-15px-bottom">Iniciar Sesion</h6>                                    
                                     <form id="login-form" action="{{ route('login') }}" method="POST" class="search-box2">                                        
                                         <div class="input-group add-on width-75 mx-auto md-width-100">

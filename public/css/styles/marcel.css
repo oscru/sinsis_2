@@ -35,7 +35,7 @@
     margin-bottom: 5px;
 }
 .backg {
-    background-color: rgba(250, 188, 75);
+    background-color: #a5a3a3;
 }
 .backg2 {
     background-color: #f2f2f2;
@@ -49,4 +49,15 @@
     font-family: arial;
     margin-top: 20px;
     margin-left: -400px;
+}
+
+.login{
+    margin-top: 18px;
+    color: black!important;
+    background-color: rgb(250, 167, 12);
+    border-radius: 20px;
+    padding: 5px 10px 35px 10px;
+    height: 10px;
+    width: 65px;
+    text-align: center;
 }
