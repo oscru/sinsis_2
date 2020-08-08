@@ -17,8 +17,8 @@
         <div class="container nav-header-container">
             <!-- start logo -->
             <div class="col-auto pl-lg-0">
-                <a href="index.html" title="SinSis" class="logo logo-main-index"><img src={{ asset('images/logos/logo-sinsis.png') }} class="logo-dark default" alt="SinSis"><img  alt="SinSis" class="logo-light"></a>
-                <a href="index.html" title="SinSis" class="logo display-none logo-mini-index"><img src={{ asset('images/logos/logo-sinsis-mini.png') }} class="logo-dark default" alt="SinSis"><img  alt="SinSis" class="logo-light"></a>
+                <a href={{ route('home') }} title="SinSis" class="logo logo-main-index"><img src={{ asset('images/logos/logo-sinsis.png') }} class="logo-dark default" alt="SinSis"><img  alt="SinSis" class="logo-light"></a>
+                <a href={{ route('home') }}title="SinSis" class="logo display-none logo-mini-index"><img src={{ asset('images/logos/logo-sinsis-mini.png') }} class="logo-dark default" alt="SinSis"><img  alt="SinSis" class="logo-light"></a>
             </div>
             <!-- end logo -->
             <div class="col accordion-menu pr-0 pr-md-3">

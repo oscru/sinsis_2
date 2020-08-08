@@ -12,6 +12,7 @@ use App\Enterprise;
 use App\User;
 use App\Enterview;
 use App\Question;
+use App\Diagnostic;
 use Symfony\Component\Console\Input\Input;
 
 class AdminController extends Controller
@@ -201,9 +202,13 @@ class AdminController extends Controller
         
         if($extension == "pdf" || $extension=="PDF"){
 
+            $file = $request->file('file');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/diagnostics/', $name);
+
             $diagnostico = new Diagnostic;
             $diagnostico->project_id = $request->project_id;
-            $diagnostico->pdf_file =  $request->file('file')->store('public');
+            $diagnostico->pdf_file =  $name;
             $diagnostico->description= $request->texto;
             $diagnostico->save();
 
