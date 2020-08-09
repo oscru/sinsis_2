@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Inicio | SinSis')
+@section('title', 'Contacto | SinSis')
 @section('body')
  <!-- start form style 02 section -->
  <section class="wow fadeIn bg-extra-dark-gray" id="obbo">

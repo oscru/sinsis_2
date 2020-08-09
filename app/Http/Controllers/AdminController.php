@@ -302,7 +302,7 @@ class AdminController extends Controller
         $side_enterprises = Enterprise::getEnterprises();
         $enterviews = $project->load('enterviews');
         $users_id = [];
-        foreach ($project->users as $use    r) {
+        foreach ($project->users as $user) {
             array_push($users_id, $user->id);
         }
         $users = User::whereNotIn('id', $users_id)

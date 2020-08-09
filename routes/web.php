@@ -114,7 +114,7 @@ Route::group(
                 'prefix' => 'clientv'
             ],
             function () {                
-                Route::get('{project_id}', array('as' => 'indexClientsv', 'uses' => 'AdminController@indexClientsv'));
+                Route::get('project/{project_slug} )', array('as' => 'indexClientsv', 'uses' => 'AdminController@indexClientsv'));
             }
         );
     }

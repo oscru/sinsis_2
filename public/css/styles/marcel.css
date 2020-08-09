@@ -50,3 +50,13 @@
     margin-top: 20px;
     margin-left: -400px;
 }
+.login-button {
+    margin-top: 18px;
+    color: white !important;
+    background-color: rgb(250, 167, 12);
+    border-radius: 20px;
+    padding: 5px 10px 30px 10px;
+    height: 10px;
+    width: 65px;
+    text-align: center;
+}

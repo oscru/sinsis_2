@@ -12,7 +12,7 @@
                     <!--<div class="linea box-separator-line width-180px bg-white lg-width-120px md-width-90px d-none d-lg-block"></div>-->
                         <h1 class="first font-weight-600 alt-font text-white-2 width-95 md-width-100">SIN SIS</h1>
                         <p class="first text-large font-weight-300 text-white-2 width-75 lg-width-85 md-width-95 sm-width-100 d-none d-md-block">Somos actualmente una de las mejores empresas enfocadas en la consultoria, nuestros clientes nos avalan, ven y conoce un poco mas</p>
-                        <a href={{ route('nosotros')}} target="_blank" class="btn btn-medium btn-white margin-40px-top text-link-deep-pink sm-margin-10px-top">Nosotros</a>
+                        <a href={{ route('nosotros')}} class="btn btn-medium btn-white margin-40px-top text-link-deep-pink sm-margin-10px-top">Nosotros</a>
                     </div>
                 </div> 
             </div>
@@ -24,17 +24,17 @@
     <div class="container"> 
         <div class="row align-items-center">
             <div class="col-12 col-xl-3 col-md-6 text-center sm-margin-15px-bottom wow fadeIn">
-                <img src="images/image-1.jpg" alt="" class="w-100">
+                <img src={{ asset('images/home/image-middle-1.jpg') }} alt="" class="w-100">
             </div>
             <div class="col-12 col-xl-3 col-md-6 text-center wow fadeIn" data-wow-delay="0.2s">
-                <img src="images/image-2.jpg" alt="" class="w-100">
+                <img src={{ asset('images/home/image-middle-2.jpg') }} alt="" class="w-100">
             </div>
             <div class="col-12 col-xl-6 p-0 lg-margin-five-top text-center text-lg-left sm-no-margin-top wow fadeIn" data-wow-delay="0.4s">
                 <div class="padding-twelve-lr lg-padding-15px-lr sm-padding-five-lr sm-padding-ten-top w-100">
                     <h4 class="font-weight-600 alt-font text-extra-dark-gray letter-spacing-minus-1">Calidad y facilidad</h4>
                     <p class="text-extra-large alt-font font-weight-400">¿Por que elegir SIN SIS?</p>
                     <p>Somos la unica empresa que se enfoca en exponer tu talento humano para asi potencializar su desempeño y maximizar el rendimiento de la empresa</p>
-                    <a href="about-us-modern.html" class="btn btn-small btn-dark-gray">Contacto</a>
+                    <a href={{ route('contact') }} class="btn btn-small btn-dark-gray">Contacto</a>
                 </div>
             </div>
         </div>

@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-uppercase alt-font d-flex align-items-center justify-content-center justify-content-md-start">
-                    <a href="tel:1234567890" class="text-link-white-2 line-height-normal" title="Call us 123-456-7890">Call us 123-456-7890</a>
+                    <a href="tel:3221396341" class="text-link-white-2 line-height-normal" title="">MX 322 139 63 41</a>
                     <div class="separator-line-verticle-extra-small bg-dark-gray display-inline-block margin-two-half-lr position-relative vertical-align-middle"></div>
-                    <a href="mailto:no-reply@domain.com" class="text-link-white-2 line-height-normal" title="no-reply@domain.com">no-reply@domain.com</a>
-                </div>                        
+                    <a href="mailto:contacto@sinsis.com.mx" class="text-link-white-2 line-height-normal" title=""> contacto@sinsis.com.mx</a>
+                </div>             
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
                             @endif
                         </li>
                         @else
-                            <a class="dropdown megamenu-fw login" href={{ route('login') }}>login</a>
+                            <a class="dropdown megamenu-fw login-button" href={{ route('login') }}>login</a>
                         @endif                                
                     </ul>
                 </div>
