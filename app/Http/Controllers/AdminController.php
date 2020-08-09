@@ -310,4 +310,10 @@ class AdminController extends Controller
         return view('clientsv', compact('project', 'projects', 'users', 'enterprise', 'enterviews', 'side_enterprises','users'));
         
     }
+
+    public function changeProjectStatus(Request $request)
+    {
+        $project = Project::where('id',$request->project)->first();
+        $project->update(['status' => 0]);
+    }
 }

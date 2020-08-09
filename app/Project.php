@@ -11,6 +11,7 @@ use App\Proposal;
 class Project extends Model
 {
     //
+    protected $fillable = ['status'];
 
     static public function getProjects()
     {
