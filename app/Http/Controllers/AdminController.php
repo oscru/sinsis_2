@@ -164,7 +164,8 @@ class AdminController extends Controller
                     'pass' => $pass
                 ];
                 //Mail::to($request->email)->queue(new UserPassword($message));
-                return response()->json(array('success' => true, 'data' => $data), 200);
+                //return response()->json(array('success' => true, 'data' => $data), 200);
+                return redirect()->back();
                 break;
                 // dd($user->password);
             case false:
@@ -258,7 +259,9 @@ class AdminController extends Controller
                     'name' => $enterprise->name,
                     'id' => $enterprise->id,
                 ];
-                return response()->json(array('success' => true, 'data' => $data), 200);
+                //return response()->json(array('success' => true, 'data' => $data), 200);
+                return redirect()->back();
+                return view('admin/enterprises/index');
                 break;
             case false:
                 $side_projects = Project::getProjects();
