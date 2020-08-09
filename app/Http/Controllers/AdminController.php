@@ -108,7 +108,7 @@ class AdminController extends Controller
             case true:
                 $enterview = new Enterview;
                 $enterview->consultor_id = Auth::user()->id;
-                $enterview->id_project = $request->project;
+                $enterview->project_id = $request->project;
                 $enterview->save();
                 $questions = array_diff($request->all(), [$request->_token, "Enviar", $request->project]);
                 foreach ($questions as $key => $question) {
@@ -218,6 +218,12 @@ class AdminController extends Controller
         
     }
 
+    public function downloadDiagnostics(Request $request)
+    {        
+        $public_dir=public_path();        
+        return response()->download($public_dir .'/diagnostics/'. $request->pdf_file);
+    }
+
     public function indexProposals(Request $request)
     {           
         $project = Project::where('slug',$request->project_name)->first();
@@ -285,5 +291,23 @@ class AdminController extends Controller
         $manager = User::where('id',$request->user_id)->first();
         $users = User::getUsers();        
         return view('admin.projects.index', compact('side_projects', 'projects','enterprises', 'side_enterprises','users', 'manager','enterprise'));
+    }
+
+    public function indexClientsv()
+    {
+        $projects = Project::getProjects();
+        $users = User::getUsers();
+        $project = Project::where('slug', $request->project_name)->first();
+        $enterprise = Enterprise::where('id', $project->enterprise_id)->first();
+        $side_enterprises = Enterprise::getEnterprises();
+        $enterviews = $project->load('enterviews');
+        $users_id = [];
+        foreach ($project->users as $use    r) {
+            array_push($users_id, $user->id);
+        }
+        $users = User::whereNotIn('id', $users_id)
+            ->where('access_level', '>=', 1)->get();
+        return view('clientsv', compact('project', 'projects', 'users', 'enterprise', 'enterviews', 'side_enterprises','users'));
+        
     }
 }

@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url({{ asset('images/bg-projects.jpg') }});">
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url({{ asset('images/bg-projects.jpg') }});background-position:center">
     @include('components.alerts')
     <div class="opacity-medium bg-extra-dark-gray"></div>
     <div class="container">
@@ -80,9 +80,9 @@
                 <div class="margin-45px-bottom sm-margin-25px-bottom">
                     <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Contenido</span></div>
                     <ul class="list-style-6 margin-50px-bottom text-small">
-                        <li><a href="blog-masonry.html">Entrevistas</a><span>{{ count($project->enterviews) }}</span></li>
-                        <li><a href="blog-masonry.html">Diagnosticos</a><span>{{ count($project->diagnostics) }}</span></li>
-                        <li><a href="blog-masonry.html">Propuestas</a><span>{{ count($project->proposals) }}</span></li>                       
+                        <li><a>Entrevistas</a><span>{{ count($project->enterviews) }}</span></li>
+                        <li><a>Diagnosticos</a><span>{{ count($project->diagnostics) }}</span></li>
+                        <li><a>Propuestas</a><span>{{ count($project->proposals) }}</span></li>                       
                     </ul>   
                 </div>
                 <div class="margin-45px-bottom sm-margin-25px-bottom">
@@ -111,13 +111,11 @@
                                     </h5>
                                   </div>                              
                                   <div id="collapse-{{ $enterview->id }}" class="collapse" aria-labelledby="heading-{{ $enterview->id }}" data-parent="#enterview-project-{{ $project->id }}">                                      
-                                    <div class="card-body">
-                                        @if ($enterview->id == 2)                   
+                                    <div class="card-body">                                                         
                                         @foreach ($enterview->questions as $question)
-                                            {{ $question->question }}<br/>
+                                            <strong>{{ $question->question }}</strong><br/>
                                             {{ ($question->pivot->answer) }}<br/>
-                                        @endforeach
-                                        @endif
+                                        @endforeach                                        
                                     </div>
                                   </div>
                                 </div>                                                                
@@ -151,12 +149,12 @@
                     @php
                         $diagnostic = $project->diagnostics[0];
                     @endphp
-                    <div class="col-12 col-lg-4 blog-image no-padding md-margin-30px-bottom sm-margin-20px-bottom margin-45px-right md-no-margin-right text-center">                        
-                        <a href={{ 'storage/'.$diagnostic->pdf_file }} download><img src={{ asset('images/icons/pdf_icon.webp') }} alt="" style="width: 100px;" title="Descargar"></a>
+                    <div class="col-12 col-lg-4 blog-image no-padding md-margin-30px-bottom sm-margin-20px-bottom margin-45px-right md-no-margin-right text-center">
+                        <a href={{ route('download-diagnostics',$diagnostic->pdf_file) }}><img src={{ asset('images/icons/pdf_icon.webp') }} alt="" style="width: 100px;" title="Descargar"></a>
                     </div>
                     <div class="col-12 col-lg-6 blog-text p-0">
                         <div class="content margin-20px-bottom md-no-padding-left ">
-                            <a href="blog-gallery-post.html" class="text-extra-dark-gray margin-5px-bottom alt-font text-extra-large font-weight-600 d-inline-block">Diagnostico numero {{ count($project->diagnostics) }}</a>
+                            <a  class="text-extra-dark-gray margin-5px-bottom alt-font text-extra-large font-weight-600 d-inline-block">Diagnostico numero {{ count($project->diagnostics) }}</a>
                             <div class="text-medium-gray text-extra-small margin-15px-bottom text-uppercase alt-font"><span>Creado el: {{ date_format($diagnostic->created_at,  'd-m-Y')}} </span></div>
                             <p class="m-0 width-95">{{ $diagnostic->description }}</p>
                         </div>

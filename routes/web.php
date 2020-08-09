@@ -82,6 +82,7 @@ Route::group(
             function () {                
                 Route::get('/create/{project_id}', array('as' => 'create-diagnostics', 'uses' => 'AdminController@createDiagnostics'));
                 Route::post('store', array('as' => 'store-diagnostics', 'uses' => 'AdminController@storeDiagnostics'));
+                Route::get('download/{pdf_file}', array('as' => 'download-diagnostics', 'uses' => 'AdminController@downloadDiagnostics'));
             }
         );
 
@@ -105,6 +106,15 @@ Route::group(
                 Route::get('create/{project_id}', array('as' => 'create-proposals', 'uses' => 'DropzoneController@createProposals'));
                 Route::post('create/upload', array('as' => 'create-upload', 'uses' => 'DropzoneController@upload'));
                 Route::post('create', array('as' => 'proposal-create', 'uses' => 'DropzoneController@create'));
+            }
+        );
+
+        Route::group(
+            [
+                'prefix' => 'clientv'
+            ],
+            function () {                
+                Route::get('{project_id}', array('as' => 'indexClientsv', 'uses' => 'AdminController@indexClientsv'));
             }
         );
     }
