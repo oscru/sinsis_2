@@ -23,3 +23,27 @@
 .texto-amarillo{
     color:rgb(250, 188, 75);
 }
+
+.edit{
+    width: 360px;
+    height: 662px;
+}
+
+.editt{
+    display: inline-block;
+    width: 220px;
+    height: 100px;
+}
+
+.odit{
+    width: 390px;
+    height: 490px;
+}
+.oditt{
+    display: inline-block;
+    width: 220px;
+    height: 100px;
+}
+.disable{
+    pointer-events: none;
+}

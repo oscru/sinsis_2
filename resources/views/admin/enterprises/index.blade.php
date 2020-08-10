@@ -13,7 +13,7 @@
                 <div class="row pricing-box-style1">
                 @foreach ($side_enterprises as $side_enterprise) 
                     <!-- start pricing item -->
-                    <div class="col-12 col-md-4 text-center md-margin-30px-bottom wow fadeInUp">
+                    <div class="col-12 col-md-4 text-center md-margin-30px-bottom wow fadeInUp odit">
                         <div class="pricing-box border border-color-extra-light-gray">
                             <div class="padding-55px-all bg-very-light-gray md-padding-30px-all sm-pading-40px-all">
                                 <!-- start pricing title -->
@@ -23,7 +23,7 @@
                                 <!-- end pricing title -->
                                 <!-- start pricing price -->
                                 <div class="pricing-price">
-                                    <h4 class="text-extra-dark-gray alt-font font-weight-600 mb-0">{{ $side_enterprise->name }}</h4>
+                                    <h4 class="text-extra-dark-gray alt-font font-weight-600 mb-0 oditt">{{ $side_enterprise->name }}</h4>
                                 </div>
                                 <!-- end pricing price -->
                             </div>

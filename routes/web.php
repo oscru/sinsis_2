@@ -47,6 +47,8 @@ Route::group(
                 Route::get('/{project_name}/proposals', array('as' => 'proposals', 'uses' => 'AdminController@indexProposals'));
                 Route::get('/{project_name}/diagnostics', array('as' => 'diagnostics', 'uses' => 'AdminController@indexDiagnostics'));
                 Route::post('/change-status', array('as' => 'change-status', 'uses' => 'AdminController@changeProjectStatus'));
+                Route::post('/change-statusM', array('as' => 'change-statusM', 'uses' => 'AdminController@changeManagerStatus'));
+                Route::post('/change-statusC', array('as' => 'change-statusC', 'uses' => 'AdminController@changeClientStatus'));
             }
         );
 
