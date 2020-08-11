@@ -28,7 +28,7 @@
                 <tr>
                     <td>{{ $diagnostic->description }}</td>
                     <td>{{ $diagnostic->pdf_file }}</td>
-                    <td><a title="Descargar" href="" class="btn text-center btn-primary rounded"><i class="fas fa-download"></i></a>&nbsp;<a title="Eliminar" href="" class="btn text-center btn-danger rounded"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a title="Descargar" href="" class="btn text-center btn-primary rounded"><i class="fas fa-download"></i></a></td>
                     <td class="text-center">{{ date_format($diagnostic->created_at,'d-m-Y') }}</td>
                 </tr>
                 <!-- end features box item -->

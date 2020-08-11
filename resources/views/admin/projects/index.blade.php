@@ -9,7 +9,12 @@
     <div class="container projects-container">        
         <div class="row">
             <div class="col-12 wow fadeIn">
-               @if (count($side_projects) > 0)
+                @if (isset($enterprise) || isset($manager))
+                    @php
+                        $side_projects = $projects;
+                    @endphp
+                @endif
+               @if (count($side_projects) > 0)               
                    <!-- start pricing table style 01 section -->             
                 <div class="row pricing-box-style1">                                       
                     @foreach ($side_projects as $side_project) 
@@ -36,6 +41,7 @@
                                     <li>Entrevistas: {{ count($side_project->enterviews) }}</li>
                                     <li>Diagnosticos: {{ count($side_project->diagnostics) }}</li>
                                     <li>Propuestas: {{ count($side_project->proposals) }}</li>
+                                    <li>Estado: {{ $side_project->status == 1 ? 'Activo' : 'Cerrado'}}</li>
                                     <strong><li>{{ str_limit($side_project->description,50) }}</li></strong>
                                     <!-- <li>Unlimited Styles</li>
                                     <li>Customer Service</li>
@@ -54,13 +60,13 @@
                     @endforeach
                 </div>
         <!-- end pricing table style 01 section -->
-               @elseif(count($side_projects) == 0 && isset($manager))
+               @elseif(count($projects) == 0 && isset($manager))
                <div class="text-center">
                 <h2><i class="far fa-frown"></i></h2>
                 <h2>{{ $manager->name }} aun no tiene proyectos asignados</h2>
                 <span>Puedes crear uno nuevo haciendo click en el boton de arriba.</span>
             </div>
-            @elseif(count($side_projects) == 0 && isset($enterprise))
+            @elseif(count($projects) == 0 && isset($enterprise))
                <div class="text-center">
                 <h2><i class="far fa-frown"></i></h2>
                 <h2>Aun no se han creado proyectos para {{ $enterprise->name }}</h2>

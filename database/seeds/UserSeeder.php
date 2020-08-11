@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Oscar Rubio',
                 'email' => 'oscar_zen17@hotmail.com',
-                'password' => bcrypt('Lomecan123'),
+                'password' => bcrypt('@Sinsis123'),
                 'access_level' => 3,
                 'charge' => 'Director',
                 'remember_token' => 'awMgW9E5Quj98g89QpMk1GzLvCpO1SkrVlOpv2C1GONdB9DZcPBtI4gyouXZ',
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Osvaldo Bernal',
                 'email' => 'osvaldobernal98@gmail.com',
-                'password' => bcrypt('Lomecan123'),
+                'password' => bcrypt('@Sinsis123'),
                 'access_level' => 2,
                 'charge' => 'Consultor',
                 'remember_token' => 'awMgW9E5Quj98g89QpMk1GzLvCpO1SkrVlOpv2C1GONdB9DZcPBtI4gyouXZ',
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Marcel Carvajal',
                 'email' => 'marcel.carvajal.1c@gmail.com',
-                'password' => bcrypt('Lomecan123'),
+                'password' => bcrypt('@Sinsis123'),
                 'access_level' => 2,
                 'charge' => 'Consultor',
                 'remember_token' => 'awMgW9E5Quj98g89QpMk1GzLvCpO1SkrVlOpv2C1GONdB9DZcPBtI4gyouXZ',
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Luis Méndez',
                 'email' => 'luismendezmedrano@gmail.com',
-                'password' => bcrypt('Lomecan123'),
+                'password' => bcrypt('@Sinsis123'),
                 'access_level' => 2,
                 'charge' => 'Consultor',
                 'remember_token' => 'awMgW9E5Quj98g89QpMk1GzLvCpO1SkrVlOpv2C1GONdB9DZcPBtI4gyouXZ',
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Alberto Altamirano',
                 'email' => 'musualtamirano@gmail.com',
-                'password' => bcrypt('Lomecan123'),
+                'password' => bcrypt('@Sinsis123'),
                 'access_level' => 2,
                 'charge' => 'Consultor',
                 'remember_token' => 'awMgW9E5Quj98g89QpMk1GzLvCpO1SkrVlOpv2C1GONdB9DZcPBtI4gyouXZ',

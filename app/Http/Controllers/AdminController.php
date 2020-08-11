@@ -66,7 +66,7 @@ class AdminController extends Controller
                 $project->enterprise_id = $request->project_enterprise;
                 $project->save();
                 $user = User::where('id', Auth::user()->id)->first();
-                $user->projects()->attach(['id_user' => Auth::user()->id]);
+                $user->projects()->attach(['user_id' => Auth::user()->id],['project_id' => $project->id]);
                 return redirect()->route('set-project-view', $project->slug);
             case false:
                 $side_projects = Project::getProjects();
@@ -156,7 +156,7 @@ class AdminController extends Controller
                     $user->password = bcrypt($pass);
                 }
                 else{
-                    $user->password = bcrypt('Lomecan123');
+                    $user->password = bcrypt('@Sinsis123');
                     
                 }
                 $user->charge = $request->charge;

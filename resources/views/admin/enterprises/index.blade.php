@@ -34,7 +34,7 @@
                                 </ul>
                                 <!-- start pricing action -->
                                 <div class="pricing-action margin-35px-top md-no-margin-top">
-                                    <a href={{ route('create-enterprise') }} class="btn btn-dark-gray btn-small text-extra-small">Ver datos</a>                                        
+                                    <a href={{ route('enterprise-projects',$side_enterprise->slug) }} class="btn btn-dark-gray btn-small text-extra-small">Ver datos</a>                                        
                                 </div>
                                 <!-- end pricing action -->
                             </div>
