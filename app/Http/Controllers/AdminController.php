@@ -151,7 +151,14 @@ class AdminController extends Controller
                 $user->name = $request->name;
                 $user->email = $request->email;
                 $user->password = bcrypt($pass);
-                $user->access_level = 1;
+                $user->access_level = $request->accslvl;
+                if (isset($request->accslvl) &&  $request->accslvl == 1){
+                    $user->password = bcrypt($pass);
+                }
+                else{
+                    $user->password = bcrypt('Lomecan123');
+                    
+                }
                 $user->charge = $request->charge;
                 $user->save();
                 $data = [
@@ -162,10 +169,16 @@ class AdminController extends Controller
                 $message = [
                     'name' => $request->name,
                     'pass' => $pass
-                ];
-                Mail::to($request->email)->queue(new UserPassword($message));
-                return response()->json(array('success' => true, 'data' => $data), 200);
-                //return redirect()->back();
+                ];                
+                if (isset($request->accslvl) &&  $request->accslvl == 1){
+                    return redirect()->back();
+                }
+                else{
+                    Mail::to($request->email)->queue(new UserPassword($message));
+                    return response()->json(array('success' => true, 'data' => $data), 200);
+                }
+                //
+                
                 break;
                 // dd($user->password);
             case false:
@@ -318,5 +331,15 @@ class AdminController extends Controller
     {
         $project = Project::where('id',$request->project)->first();
         $project->update(['status' => 0]);
+    }
+    public function changeManagerStatus(Request $request)
+    {
+        $manager = User::where('id',$request->manager)->first();
+        $manager->update(['status' => 0]);
+    }
+    public function changeClientStatus(Request $request)
+    {
+        $client = User::where('id',$request->client)->first();
+        $client->update(['status' => 0]);
     }
 }

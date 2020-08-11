@@ -177,3 +177,87 @@ $("#close-project").on("click", () => {
         }, 2500);
     });
 });
+
+$(".dissable-manager").click(function (e) {
+    let token = $(`input[name="_token"]`).val();
+    let manager = $(this).data("mdl");
+    console.log(manager);
+    $.ajax({
+        method: `POST`,
+        url: `/admin/project/change-statusM`,
+        data: {
+            _token: token,
+            manager: manager,
+        },
+        beforeSend: () => {},
+    }).done(() => {
+        $(`#tr-${manager}`).addClass("disable");
+        $(`#mdal-${manager}`).modal("hide");
+        /* $("#change-status").removeClass(`project-active`);
+        $("#change-status").addClass(`project-innactive`);
+        $("#change-status").text(`proyecto cerrado`);
+        $(".create-button").hide();
+        $("#users-form").hide();
+        $("#change-status").attr(`id`, ``);
+        $(`#exampleModalCenter`).modal("hide");
+        $(`#close-project-alert`).removeClass("d-none");
+         */
+        setTimeout(() => {
+            $(`.dissable-manager-alert`).addClass("d-none");
+        }, 2500);
+    });
+});
+
+$(".able-manager").click(function (e) {
+    let manager = $(this).data("md");
+    $(`#chck-${manager}`).prop("checked", true);
+    $(`#mdal-${manager}`).modal("hide");
+    setTimeout(() => {
+        $(`.dissable-manager-alert`).addClass("d-none");
+    }, 2500);
+});
+
+$(".dissable-client").click(function (e) {
+    let token = $(`input[name="_token"]`).val();
+    let client = $(this).data("mdl");
+    console.log(client);
+    $.ajax({
+        method: `POST`,
+        url: `/admin/project/change-statusC`,
+        data: {
+            _token: token,
+            client: client,
+        },
+        beforeSend: () => {},
+    }).done(() => {
+        $(`#tr-${client}`).addClass("disable");
+        $(`#mdal-${client}`).modal("hide");
+        /* $("#change-status").removeClass(`project-active`);
+        $("#change-status").addClass(`project-innactive`);
+        $("#change-status").text(`proyecto cerrado`);
+        $(".create-button").hide();
+        $("#users-form").hide();
+        $("#change-status").attr(`id`, ``);
+        $(`#exampleModalCenter`).modal("hide");
+        $(`#close-project-alert`).removeClass("d-none");
+         */
+        setTimeout(() => {
+            $(`.dissable-client-alert`).addClass("d-none");
+        }, 2500);
+    });
+    /* $(".able-chk").click(function (e) { 
+    let client=$(this).data('md');
+    /*console.log(client);
+    $( `#chck-${client}` ).prop( "checked", true ); */
+    //$(`#mdal-${client}`).modal("hide");
+    /* setTimeout(() => {
+        $(`.dissable-client-alert`).addClass("d-none");
+    }, 2500);
+}); */
+
+    $(".jalaparo").click(function (e) {
+        e.preventDefault();
+        let client = $(this).data("md");
+        $(`#mdal-${client}`).modal("hide");
+    });
+});
