@@ -70,6 +70,12 @@ return [
         'array' => [
             'transport' => 'array',
         ],
+
+        'mailers' => [
+            'sendgrid' => [
+                'transport' => 'sendgrid',
+            ],
+        ],
     ],
 
     /*

@@ -18,8 +18,8 @@ class DropzoneController extends Controller
         $projects = Project::getProjects();
         $side_enterprises = Enterprise::getEnterprises();
         $side_projects = Project::getProjects();
-        $users = User::getUsers();
-        return view('admin/proposal/create', compact('projects', 'side_enterprises','project_id', 'side_projects', 'users'));
+        $side_users = User::getUsers();
+        return view('admin/proposal/create', compact('projects', 'side_enterprises','project_id', 'side_projects', 'side_users'));
     }
 
 

@@ -55,10 +55,10 @@ class User extends Authenticatable
     {        
         switch(Auth::user()->access_level){
             case 2:
-                $users = User::where('access_level',1)->get();
+                $users = User::where('access_level',1)->orderBy('created_at','desc')->take(10)->get();
                 return $users;
             case 3:
-                $users = User::where('access_level','!=',3)->get();
+                $users = User::where('access_level','!=',3)->orderBy('created_at','desc')->take(10)->get();
                 return $users;
         }
     }

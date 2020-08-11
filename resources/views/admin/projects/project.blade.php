@@ -87,7 +87,8 @@
                 </div>
                 <div class="margin-45px-bottom sm-margin-25px-bottom">
                     <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Empresa</span></div>
-                    <ul class="list-style-6 margin-20px-bottom text-small">                      
+                    <ul class="list-style-6 margin-20px-bottom text-small">
+                        <li><a href="{{ route('enterprise-projects',$enterprise->slug) }}">{{ $enterprise->name }}</a></li>                        
                     </ul>   
                 </div>
             </aside>
@@ -172,7 +173,7 @@
                     <div class="acordion col-12">
                         <div class="card">                                    
                             <a class="btn btn-link create-button" href={{ route('create-diagnostics',$project->id) }} type="button">
-                            {{ isset($project->diagnostic) ? '+ atualizar diagnostico' : '+ crear diagnostico' }}
+                            {{ count($project->diagnostics) > 0 ? '+ actualizar diagnostico' : '+ crear diagnostico' }}
                             </a>
                         </div>
                     </div>
@@ -211,7 +212,7 @@
                     <div class="acordion col-12">
                         <div class="card">                                    
                             <a class="btn btn-link create-button" href={{ route('create-proposals',$project->id) }} type="button">
-                            {{ isset($project->proposals) ? '+ atualizar propuesta' : '+ crear propuesta' }}
+                            {{ count($project->proposals) > 0 ? '+ actualizar propuesta' : '+ crear propuesta' }}
                             </a>
                         </div>
                     </div>

@@ -48,7 +48,7 @@
                     <li class="dropdown">
                           <a href={{ route('create-user') }} title="Projectos" data-toggle="dropdown">Nuevo</i></a>
                     </li>
-                    @foreach ($users as $user)
+                    @foreach ($side_users as $user)
                     <li class="dropdown">
                         <a href="{{ route('user-projects',$user->id) }}" title={{ $user->name }} data-toggle="dropdown">{{ $user->name }}</a>
                     </li>    
